@@ -1,0 +1,72 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+
+export default function ReactionRush() {
+  const [started, setStarted] = useState(false);
+  const [score, setScore] = useState<number | null>(null);
+  const [timeLeft, setTimeLeft] = useState(10);
+  const [clicks, setClicks] = useState(0);
+  const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
+
+  const startGame = () => {
+    setStarted(true);
+    setClicks(0);
+    setTimeLeft(10);
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          setScore(clicks);
+          setStarted(false);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    setTimer(interval);
+  };
+
+  const handleClick = () => {
+    if (started) setClicks((prev) => prev + 1);
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-black to-gray-900 text-white px-4">
+      <h1 className="text-4xl font-bold mb-6">Techtocks: Reaction Rush</h1>
+
+      {!started && score === null && (
+        <Button className="text-xl px-6 py-3" onClick={startGame}>
+          Comenzar juego
+        </Button>
+      )}
+
+      {started && (
+        <>
+          <p className="text-lg mb-4">Tiempo restante: {timeLeft}s</p>
+          <Button
+            onClick={handleClick}
+            className="text-xl px-8 py-4 animate-pulse"
+          >
+            ¡Click!
+          </Button>
+        </>
+      )}
+
+      {!started && score !== null && (
+        <div className="mt-6 text-center">
+          <p className="text-xl">Tu puntuación: <span className="font-bold">{score}</span> clicks</p>
+          <p className="mt-2 text-md">¡Reflejos impresionantes! ¿Querés mejorar aún más?</p>
+          <a
+            href="https://your-affiliate-link.com"
+            className="inline-block mt-4 bg-green-500 text-white px-6 py-3 rounded-xl hover:bg-green-600 transition"
+          >
+            Jugá contra otros
+          </a>
+          <Button className="mt-4 block" onClick={() => setScore(null)}>
+            Volver a jugar
+          </Button>
+        </div>
+      )}
+    </div>
+  );
+}
