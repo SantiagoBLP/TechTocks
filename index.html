@@ -3,12 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Techtocks: Reaction Rush</title>
-    <script type="module" src="/main.js"></script>
+    <title>Inmobiliaria Aragón - Zaragoza</title>
     <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/main.js" defer></script>
   </head>
-  <body class="bg-gradient-to-br from-black to-gray-900 text-white min-h-screen flex flex-col items-center justify-center">
-    <h1 class="text-4xl font-bold mb-6">Techtocks: Reaction Rush</h1>
-    <div id="app"></div>
+  <body class="font-sans antialiased text-gray-800">
+    <header class="bg-white shadow">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-blue-600">Inmobiliaria Aragón</a>
+        <nav>
+          <button id="menu-button" class="md:hidden text-blue-600 focus:outline-none">☰</button>
+          <ul id="menu" class="hidden md:flex space-x-6">
+            <li><a href="#venta" class="hover:text-blue-600">Venta</a></li>
+            <li><a href="#alquiler" class="hover:text-blue-600">Alquiler</a></li>
+            <li><a href="#vacacional" class="hover:text-blue-600">Alquiler Vacacional</a></li>
+            <li><a href="#contacto" class="hover:text-blue-600">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="bg-cover bg-center h-96 flex items-center justify-center text-center" style="background-image: url('https://source.unsplash.com/featured/?zaragoza');">
+        <div class="bg-black bg-opacity-50 p-8 rounded">
+          <h1 class="text-4xl md:text-5xl text-white font-bold mb-4">Tu hogar en Zaragoza</h1>
+          <p class="text-lg text-gray-200 mb-6">Locales y pisos para vender, alquilar y vacacionar.</p>
+          <a href="#venta" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Explora opciones</a>
+        </div>
+      </section>
+
+      <section id="venta" class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-8">Venta</h2>
+        <div class="grid gap-8 md:grid-cols-3">
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/featured/?apartment" alt="Piso en venta" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Piso céntrico</h3>
+              <p class="text-gray-600">Amplio y luminoso, cerca del Pilar.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/featured/?house" alt="Casa en venta" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Chalet con jardín</h3>
+              <p class="text-gray-600">Perfecto para familias en zonas tranquilas.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/featured/?loft" alt="Loft en venta" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Loft moderno</h3>
+              <p class="text-gray-600">Diseño contemporáneo y vistas increíbles.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="alquiler" class="bg-gray-100">
+        <div class="container mx-auto px-4 py-16">
+          <h2 class="text-3xl font-bold text-center mb-8">Alquiler</h2>
+          <div class="grid gap-8 md:grid-cols-2">
+            <div class="bg-white rounded shadow overflow-hidden">
+              <img src="https://source.unsplash.com/featured/?rental,apartment" alt="Piso en alquiler" class="w-full h-48 object-cover" />
+              <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">Apartamento moderno</h3>
+                <p class="text-gray-600">Totalmente equipado y listo para entrar a vivir.</p>
+              </div>
+            </div>
+            <div class="bg-white rounded shadow overflow-hidden">
+              <img src="https://source.unsplash.com/featured/?office" alt="Local en alquiler" class="w-full h-48 object-cover" />
+              <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">Local comercial</h3>
+                <p class="text-gray-600">Excelente ubicación para tu negocio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vacacional" class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-8">Alquiler vacacional</h2>
+        <div class="grid gap-8 md:grid-cols-3">
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/featured/?vacation,apartment" alt="Piso vacacional" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Apartamento turístico</h3>
+              <p class="text-gray-600">A pocos minutos del centro histórico.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/featured/?vacation,house" alt="Casa vacacional" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Casa rural</h3>
+              <p class="text-gray-600">Descanso y naturaleza cerca de Zaragoza.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/featured/?vacation,loft" alt="Loft vacacional" class="w-full h-48 object-cover" />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">Loft con estilo</h3>
+              <p class="text-gray-600">Disfruta de la ciudad con todas las comodidades.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="bg-blue-600 text-white">
+        <div class="container mx-auto px-4 py-16">
+          <h2 class="text-3xl font-bold text-center mb-8">Contacto</h2>
+          <form class="max-w-xl mx-auto grid gap-4">
+            <input type="text" placeholder="Nombre" class="p-3 rounded text-gray-800" />
+            <input type="email" placeholder="Correo electrónico" class="p-3 rounded text-gray-800" />
+            <textarea placeholder="Mensaje" class="p-3 rounded text-gray-800"></textarea>
+            <button type="submit" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded hover:bg-gray-100 transition">Enviar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-200 text-center py-6">
+      <p>&copy; 2024 Inmobiliaria Aragón. Todos los derechos reservados.</p>
+    </footer>
   </body>
 </html>
